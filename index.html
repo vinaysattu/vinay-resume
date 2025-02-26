@@ -7,71 +7,79 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            text-align: center;
         }
         .container {
             width: 80%;
-            margin: auto;
-            overflow: hidden;
+            max-width: 800px;
+            margin: 20px auto;
             background: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        header {
-            text-align: center;
-            padding: 20px;
-            background: #333;
-            color: white;
+        .profile-pic {
+            width: 150px;
+            border-radius: 50%;
+            border: 3px solid #333;
         }
-        section {
-            margin: 20px 0;
+        .section {
+            margin-top: 20px;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
         }
-        h2 {
-            color: #333;
+        .company {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        .company img {
+            width: 60px;
+            margin-right: 15px;
         }
         .contact a {
-            color: #007bff;
             text-decoration: none;
+            color: #0073b1;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Vinay Sattu</h1>
-        <p>Data Engineer | Snowflake Certified | SQL | Python | ETL</p>
-    </header>
+
     <div class="container">
-        <section class="about">
-            <h2>About Me</h2>
-            <p>Snowflake certified Data Engineer with 3.5+ years of experience in SQL, Python, ETL, and Data Warehousing.</p>
-        </section>
-        <section class="experience">
-            <h2>Experience</h2>
-            <ul>
-                <li><strong>Anblicks</strong> - Data Engineer (July 2024 - Present)</li>
-                <li><strong>Accenture</strong> - Data Engineer (March 2023 - July 2024)</li>
-                <li><strong>Cognizant</strong> - Programmer Analyst (June 2021 - March 2023)</li>
-            </ul>
-        </section>
-        <section class="skills">
-            <h2>Skills</h2>
-            <p>SQL, Python, Snowflake, DBT, Azure, ETL, Data Architecture, CI/CD</p>
-        </section>
-        <section class="certifications">
-            <h2>Certifications</h2>
-            <ul>
-                <li>Snowflake - SnowPro Core (June 2024)</li>
-                <li>DBT Fundamentals (March 2023)</li>
-            </ul>
-        </section>
-        <section class="contact">
+        <!-- Profile Picture -->
+        <img src="Grey Minimalist Business Twitter Profile Picture.pmg" alt="Vinay Sattu" class="profile-pic">
+
+        <!-- Name & Title -->
+        <h1>Vinay Sattu</h1>
+        <h3>Software Engineer</h3>
+
+        <!-- Experience Section -->
+        <div class="section">
+            <h2>Work Experience</h2>
+
+            <div class="company">
+                <img src="images/company1.png" alt="Company 1">
+                <p>Software Engineer at <strong>Company 1</strong></p>
+            </div>
+
+            <div class="company">
+                <img src="images/company2.png" alt="Company 2">
+                <p>Senior Developer at <strong>Company 2</strong></p>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="section contact">
             <h2>Contact</h2>
-            <p>Email: <a href="mailto:vinaysattu11@gmail.com">vinaysattu11@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/vinay-sattu-64750915b" target="_blank">vinay-sattu-64750915b</a></p>
-        </section>
+            <p>Email: your.email@example.com</p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/vinaysattu" target="_blank">linkedin.com/in/vinaysattu</a></p>
+        </div>
     </div>
+
 </body>
 </html>

@@ -5,73 +5,460 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vinay Sattu - Resume</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap');
+        
+        :root {
+            --primary-color: #6A5ACD;       /* Slate Blue */
+            --secondary-color: #FF7F50;     /* Coral */
+            --accent-color: #4169E1;        /* Royal Blue */
+            --highlight-color: #9370DB;     /* Medium Purple */
+            --background-color: #F8F9FA;
+            --card-color: #FFFFFF;
+            --dark-text: #2F3542;
+            --light-text: #F8F9FC;
+            --gray-text: #6C757D;
+        }
+        
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
         }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--background-color);
+            color: var(--dark-text);
+            line-height: 1.6;
+            padding: 30px 0;
+        }
+        
         .container {
-            width: 80%;
-            margin: auto;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.9) 100%);
+            border-radius: 24px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 
+                        0 5px 15px rgba(0, 0, 0, 0.05);
             overflow: hidden;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            position: relative;
         }
+        
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            z-index: 1;
+        }
+        
         header {
-            text-align: center;
-            padding: 20px;
-            background: #333;
-            color: white;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--highlight-color) 100%);
+            padding: 60px 40px;
+            color: var(--light-text);
+            position: relative;
+            overflow: hidden;
         }
+        
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M0,96L48,106.7C96,117,192,139,288,133.3C384,128,480,96,576,96C672,96,768,128,864,154.7C960,181,1056,203,1152,192C1248,181,1344,139,1392,117.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            transform: translateY(50%);
+            z-index: 0;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+        }
+        
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        header p {
+            font-size: 1.3rem;
+            margin-top: 10px;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.95);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .main-content {
+            padding: 40px;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
         section {
-            margin: 20px 0;
+            background-color: var(--card-color);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            position: relative;
+            overflow: hidden;
         }
+        
+        section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color));
+            border-radius: 4px 0 0 4px;
+        }
+        
+        section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
         h2 {
-            color: #333;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            position: relative;
+            padding-left: 15px;
         }
-        .contact a {
-            color: #007bff;
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            border-radius: 3px;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            color: var(--dark-text);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        .experience-item {
+            margin-bottom: 30px;
+            position: relative;
+            padding-left: 30px;
+            border-left: 2px solid var(--accent-color);
+            padding-bottom: 15px;
+        }
+        
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .experience-item::before {
+            content: "";
+            position: absolute;
+            left: -10px;
+            top: 0;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .company {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+        
+        .position {
+            font-weight: 500;
+            color: var(--dark-text);
+            margin-bottom: 3px;
+        }
+        
+        .date {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+            font-style: italic;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
+        .skill-tag {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            box-shadow: 0 3px 8px rgba(106, 90, 205, 0.25);
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .skill-tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(106, 90, 205, 0.4);
+        }
+        
+        .certification-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: rgba(248, 249, 250, 0.8);
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+        
+        .certification-item:hover {
+            background-color: rgba(248, 249, 250, 1);
+            transform: translateX(5px);
+        }
+        
+        .cert-icon {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--highlight-color) 60%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 3px 8px rgba(255, 127, 80, 0.25);
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background-color: rgba(248, 249, 250, 0.8);
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+        
+        .contact-item:hover {
+            background-color: rgba(248, 249, 250, 1);
+            transform: translateX(5px);
+        }
+        
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--highlight-color) 0%, var(--accent-color) 100%);
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            box-shadow: 0 3px 8px rgba(147, 112, 219, 0.25);
+        }
+        
+        a {
+            color: var(--accent-color);
             text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            position: relative;
+        }
+        
+        a::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--secondary-color);
+        }
+        
+        a:hover::after {
+            width: 100%;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--gray-text);
+            font-size: 0.9rem;
+            background: linear-gradient(to top, rgba(248, 249, 250, 0.8), transparent);
+            position: relative;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
+            .container {
+                border-radius: 20px;
+            }
+            
+            header {
+                padding: 40px 20px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            header p {
+                font-size: 1.1rem;
+            }
+            
+            .main-content {
+                padding: 25px;
+                gap: 25px;
+            }
+            
+            section {
+                padding: 25px;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Vinay Sattu</h1>
-        <p>Data Engineer | Snowflake Certified | SQL | Python | ETL</p>
-    </header>
     <div class="container">
-        <section class="about">
-            <h2>About Me</h2>
-            <p>Snowflake certified Data Engineer with 3.5+ years of experience in SQL, Python, ETL, and Data Warehousing.</p>
-        </section>
-        <section class="experience">
-            <h2>Experience</h2>
-            <ul>
-                <li><strong>Anblicks</strong> - Data Engineer (July 2024 - Present)</li>
-                <li><strong>Accenture</strong> - Data Engineer (March 2023 - July 2024)</li>
-                <li><strong>Cognizant</strong> - Programmer Analyst (June 2021 - March 2023)</li>
-            </ul>
-        </section>
-        <section class="skills">
-            <h2>Skills</h2>
-            <p>SQL, Python, Snowflake, DBT, Azure, ETL, Data Architecture, CI/CD</p>
-        </section>
-        <section class="certifications">
-            <h2>Certifications</h2>
-            <ul>
-                <li>Snowflake - SnowPro Core (June 2024)</li>
-                <li>DBT Fundamentals (March 2023)</li>
-            </ul>
-        </section>
-        <section class="contact">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:vinaysattu11@gmail.com">vinaysattu11@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/vinay-sattu-64750915b" target="_blank">vinay-sattu-64750915b</a></p>
-        </section>
+        <header>
+            <div class="header-content">
+                <h1>Vinay Sattu</h1>
+                <p>Data Engineer | Snowflake Certified | SQL | Python | ETL</p>
+            </div>
+        </header>
+        
+        <div class="main-content">
+            <section class="about">
+                <h2>About Me</h2>
+                <p>Snowflake certified Data Engineer with 3.5+ years of experience specializing in SQL, Python, ETL processes, and Data Warehousing solutions. Passionate about building scalable data architecture and transforming complex data into actionable insights.</p>
+            </section>
+            
+            <section class="experience">
+                <h2>Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="company">Anblicks</div>
+                    <div class="position">Data Engineer</div>
+                    <div class="date">July 2024 - Present</div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="company">Accenture</div>
+                    <div class="position">Data Engineer</div>
+                    <div class="date">March 2023 - July 2024</div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="company">Cognizant</div>
+                    <div class="position">Programmer Analyst</div>
+                    <div class="date">June 2021 - March 2023</div>
+                </div>
+            </section>
+            
+            <section class="skills">
+                <h2>Skills</h2>
+                <div class="skills-container">
+                    <div class="skill-tag">SQL</div>
+                    <div class="skill-tag">Python</div>
+                    <div class="skill-tag">Snowflake</div>
+                    <div class="skill-tag">DBT</div>
+                    <div class="skill-tag">Azure</div>
+                    <div class="skill-tag">ETL</div>
+                    <div class="skill-tag">Data Architecture</div>
+                    <div class="skill-tag">CI/CD</div>
+                </div>
+            </section>
+            
+            <section class="certifications">
+                <h2>Certifications</h2>
+                
+                <div class="certification-item">
+                    <div class="cert-icon">S</div>
+                    <div>
+                        <div class="company">Snowflake - SnowPro Core</div>
+                        <div class="date">June 2024</div>
+                    </div>
+                </div>
+                
+                <div class="certification-item">
+                    <div class="cert-icon">D</div>
+                    <div>
+                        <div class="company">DBT Fundamentals</div>
+                        <div class="date">March 2023</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="contact">
+                <h2>Contact</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">@</div>
+                        <a href="mailto:vinaysattu11@gmail.com">vinaysattu11@gmail.com</a>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">in</div>
+                        <a href="https://linkedin.com/in/vinay-sattu-64750915b" target="_blank">linkedin.com/in/vinay-sattu-64750915b</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <footer>
+            &copy; 2025 Vinay Sattu - All Rights Reserved
+        </footer>
     </div>
 </body>
 </html>
